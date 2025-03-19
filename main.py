@@ -1,5 +1,3 @@
-import numpy as np
-
 def is_prime(n):
     """Check if a number is prime."""
     if n < 2:
@@ -23,7 +21,8 @@ def factorial(n):
     return n * factorial(n - 1)
 
 def matrix_multiplication(A, B):
-    """Perform matrix multiplication using NumPy."""
+    """Perform matrix multiplication using NumPy (imported inside the function)."""
+    import numpy as np  # Importing NumPy inside the function
     return np.dot(A, B)
 
 def main():
@@ -42,8 +41,8 @@ def main():
     print(f"Factorial of {fact_num}: {factorial(fact_num)}")
     
     # Matrix Multiplication
-    A = np.array([[1, 2], [3, 4]])
-    B = np.array([[5, 6], [7, 8]])
+    A = [[1, 2], [3, 4]]  # Using lists instead of NumPy arrays
+    B = [[5, 6], [7, 8]]
     print("\nMatrix A:\n", A)
     print("Matrix B:\n", B)
     print("Matrix Multiplication Result:\n", matrix_multiplication(A, B))
